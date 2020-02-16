@@ -7,7 +7,7 @@
         insert into member (mid, mpass, mpass_check, mname) values (#{mid}, #{mpass}, #{mpass_check}, #{mname});
     </insert>
 
-    <select id="loginAction" parameterType="vo.LoginVO" resultType="vo.LoginVO">
-        select mid , mpass , mname from member where mid = #{mid} and mpass = #{mpass}
+    <select id="loginAction" resultType="vo.LoginVO">
+        select mid , mpass from member where mid = #{mid} and mpass = #{mpass}
     </select>
 </mapper>

@@ -2,6 +2,7 @@ package service;
 
 import common.LoginUtil;
 import dao.MemberDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vo.LoginVO;
 import vo.MemberVO;
