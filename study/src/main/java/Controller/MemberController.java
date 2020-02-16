@@ -39,20 +39,16 @@ public class MemberController {
 
     @RequestMapping(value = "/loginout/login.action", method = RequestMethod.POST)
     public String loginact(LoginVO loginVO, HttpServletRequest req, Model model) throws Exception{
-        LoginVO resultVO;
-        resultVO = service.loginAction(loginVO);
-        if(resultVO != null && !resultVO.getMid().equals("") && !resultVO.getMpass().equals("")){
-            logger.warn("성공");
-            req.getSession().setAttribute("loginVO",resultVO);
-            return "/board/writeView";
+        LoginVO result = service.loginAction(loginVO);
+        if(result != null){
+            req.getSession().setAttribute("loginVO", result);
+            return "forward:/";
         }else{
-            logger.warn("실패" + resultVO.getMpass());
-            model.addAttribute("msg","로그인이 실패했습니다.");
-            return "redirect:/info";
+            return "redirect:/loginout/login";
         }
-    }
+    } // 반환형 String으로
 
-    @RequestMapping(value = "/loginout/logout.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/loginout/logout.action", method = RequestMethod.GET)
     public String logout(LoginVO loginVO, HttpServletRequest req, Model model) throws Exception{
         req.getSession().removeAttribute("loginVO");
         return "redirect:/";

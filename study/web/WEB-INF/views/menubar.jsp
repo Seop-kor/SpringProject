@@ -22,11 +22,19 @@
             <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
         </ul>
-        <div class="container-fluid justify-content-end">
-            <a class="text-light" href="/loginout/login">로그인</a>
-            &nbsp; &nbsp;
-            <a class="text-light" href="/loginout/signup">회원가입</a>
-        </div>
+        <c:if test="${loginVO == null}">
+            <div class="container-fluid justify-content-end">
+                <a class="text-light" href="/loginout/login">로그인</a>
+                &nbsp; &nbsp;
+                <a class="text-light" href="/loginout/signup">회원가입</a>
+            </div>
+        </c:if>
+        <c:if test="${loginVO != null}">
+            <div class="container-fluid justify-content-end">
+                <h1>${name}</h1>
+                <a class="text-light" href="/loginout/logout.action">로그아웃</a>
+            </div>
+        </c:if>
     </nav>
 </body>
 </html>

@@ -48,11 +48,6 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="writedate">작성일자</label><input type="text" id="writedate" name="writedate" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <button type="submit">작성</button>
                     </td>
                 </tr>

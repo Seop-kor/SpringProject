@@ -1,12 +1,20 @@
 package vo;
 
 public class BoardVO {
+    int no;
     String title;
     String content;
     String name;
     String pass;
-    String writedate;
     int readcount;
+
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
 
     public String getTitle() {
         return title;
@@ -38,14 +46,6 @@ public class BoardVO {
 
     public void setPass(String pass) {
         this.pass = pass;
-    }
-
-    public String getWritedate() {
-        return writedate;
-    }
-
-    public void setWritedate(String writedate) {
-        this.writedate = writedate;
     }
 
     public int getReadcount() {

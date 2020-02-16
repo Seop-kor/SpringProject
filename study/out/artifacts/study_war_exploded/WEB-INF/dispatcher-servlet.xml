@@ -13,13 +13,13 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-    <bean id="loginInterceptor" class="interceptor.LoginInterceptor">
-    </bean>
+<!--    <bean id="loginInterceptor" class="interceptor.LoginInterceptor">-->
+<!--    </bean>-->
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/loginout/login.action"/>
-            <ref bean="loginInterceptor"></ref>
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/loginout/login.action"/>-->
+<!--            <ref bean="loginInterceptor"></ref>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 </beans>

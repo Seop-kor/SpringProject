@@ -6,15 +6,13 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import vo.LoginVO;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession httpSession = request.getSession();
-        LoginVO loginVO = (LoginVO)httpSession.getAttribute("loginVO");
-        if(loginVO == null){
-            response.sendRedirect("/loginout/login");
+        if(httpSession.getAttribute("loginVO") == null){
+            response.sendRedirect(request.getContextPath() + "/loginout/signup");
             return false;
         }
         return true;
